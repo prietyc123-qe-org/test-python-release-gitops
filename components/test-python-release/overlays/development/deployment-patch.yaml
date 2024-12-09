@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: test-python-release
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/dance-bootstrap-app:latest
-        name: container-image  
+        - image: route-difficult-cheetah-artifactory.apps.rosa.xjiang1206417.hco2.p3.openshiftapps.com/rhtap-test-docker/bootstrap:7c0d3dce3b38c5bbeeb4f39ac0b0b75c1693365f@sha256:06034355bfbd0c691b9154cab9c3096ab05b3572dc985f7621814ef41530218b
+          name: container-image
